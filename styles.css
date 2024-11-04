@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #8c32cd, #00bbff, #3237cd);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.719);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+button.add {
+    flex: 0.1;
+    padding: 8px 13px;
+    background-color: #000000;
+    color: #3237cd;
+    border: solid rgb(0, 0, 0) 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    border: solid #3237cd 3px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.completed {
+    background-color: black; 
+    color: white;
+}
+
+input[type="checkbox"] {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border: 2px solid black; 
+    
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px; 
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✔";
+    color: green;
+    font-size: 16px;
+    position: absolute;
+    top: -2px;
+    left: 2px;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+}
+
+label.task-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+button.delete-btn {
+    background-color: #dc3545;
+    padding: 5px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button.delete-btn:hover {
+    background-color: #c82333;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    max-height: 70vh; 
+    overflow-y: auto;
+}
